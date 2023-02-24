@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>API 값 확인용 임시 페이지</title>        
+    </head>
+    <body>
+        <h1 id="sound"></h1>
+        <input id="name" type="text">
+        <button onclick="getSound()">API 요청</button>
+
+        <script>
+            function getSound() {
+                const name = document.getElementById('name').value;
+                fetch(`http://localhost:3000/sound/${name}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                        document.getElementById('sound').innerText = data.sound;
+                    });
+            }
+        </script>
+    </body>
+</html>

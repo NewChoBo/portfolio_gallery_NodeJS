@@ -1,12 +1,15 @@
 const express = require('express')
-const app = express()
+var cors = require('cors')
+const app = express()       //익스프레스에 만든 서버를 앱에
 const port = 3000
+
+app.use(cors())     //앱에서 cors 사용. 인자에 넣어서 조건 만들 수 있다.
 
 app.get('/', (req, res) => {
     res.send('Hello World!!')
 });
 
-app.get('/user/:name', (req, res) => {
+app.get('/sound/:name', (req, res) => {
     // const p = req.params;
     // p.name으로만 값을 꺼내올 수 있었음. 이를 아래 코드처럼 단축할 수 있음
 
@@ -28,7 +31,7 @@ app.get('/user/:name', (req, res) => {
         default:
             // console.log('끝');
     }
-    res.json(name)
+    // res.json(name)
 });
 
 app.listen(port, () => {
