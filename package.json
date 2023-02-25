@@ -7,10 +7,26 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewChoBo/portfolio_gallery_NodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NewChoBo/portfolio_gallery_NodeJS/issues"
+  },
+  "homepage": "https://github.com/NewChoBo/portfolio_gallery_NodeJS#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/node": "^7.20.7",
+    "nodemon": "^2.0.20"
+  }
 }

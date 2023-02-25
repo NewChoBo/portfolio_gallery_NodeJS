@@ -6,7 +6,7 @@ const port = 3000
 app.use(cors())     //앱에서 cors 사용. 인자에 넣어서 조건 만들 수 있다.
 
 app.get('/', (req, res) => {
-    res.send('Hello World!!')
+    res.send('Hello World!!!!!!!')
 });
 
 app.get('/sound/:name', (req, res) => {
