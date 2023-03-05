@@ -1,12 +1,23 @@
-const express = require('express')
-var cors = require('cors')
-const app = express()       //익스프레스에 만든 서버를 앱에
-const port = 3000
+const express = require('express');
+var cors = require('cors');
+const app = express();       //익스프레스에 만든 서버를 앱에
+const port = 3000;
+const db = require('./mariaDB');
 
-app.use(cors())     //앱에서 cors 사용. 인자에 넣어서 조건 만들 수 있다.
+app.use(cors());     //앱에서 cors 사용. 인자에 넣어서 조건 만들 수 있다.
 
 app.get('/', (req, res) => {
-    res.send('')
+    var result;
+    var testQuery = "select * from admin;";
+
+    db.query(testQuery, function (err, results, fields) { // testQuery 실행
+        if (err) {
+            console.log(`오류 발생 : ${err}`);
+        }
+        console.log(`가져온 데이터 : ${JSON.stringify(results)}`);      
+        
+        res.send(results);
+    });    
 });
 
 app.get('/portfolios', (req, res) => {
